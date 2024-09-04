@@ -37,6 +37,7 @@ class Filters extends BaseFilters
         'performance'   => PerformanceMetrics::class,
 
         // Add your own alias here...
+        'employee_store'            => EmployeeDepartmentStore::class,
         'employee_department_store' => EmployeeDepartmentStore::class,
     ];
 
@@ -109,6 +110,7 @@ class Filters extends BaseFilters
      * @var array<string, array<string, list<string>>>
      */
     public array $filters = [
+        'employee_store' => ['before' => ['employee', 'employee/*']],
         'employee_department_store' => ['before' => ['employee/departments', 'employee/departments/*']],
     ];
 }

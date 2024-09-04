@@ -43,6 +43,5 @@ class EmployeeDepartmentStore implements FilterInterface
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null): void
     {
         // Do something here
-        $response->setHeader('X-Foo', 'Bar');
     }
 }
