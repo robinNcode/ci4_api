@@ -5,6 +5,16 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+service('auth')->routes($routes, ['except' => ['login', 'register']]);
 
-service('auth')->routes($routes);
+$routes->get('login', '\App\Controllers\Auth\LoginController::loginView');
+$routes->get('register', '\App\Controllers\Auth\RegisterController::registerView');
+
+/**
+ * Employee Department API Routes
+ */
+$routes->group('api', ['namespace' => 'App\Controllers\Api'], function ($routes) {
+    $routes->group('v1', function ($routes) {
+        $routes->resource('employee/departments', ['controller' => 'EmployeeDepartmentController']);
+    });
+});
