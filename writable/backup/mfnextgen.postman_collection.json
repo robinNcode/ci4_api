@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "f732d1b0-8afa-4eed-a85e-4629fd125d90",
+		"name": "mfnextgen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18994272"
+	},
+	"item": [
+		{
+			"name": "login attempt",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0"
+					},
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.5"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br, zstd"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:7071"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:7071/login"
+					},
+					{
+						"key": "Cookie",
+						"value": "debug-bar-theme=light; debug-bar-position=bottom; debug-bar-tab=ci-database; debug-bar-state=minimized; ci_session=n762tr4r1ijqr731s8pmod81sdp3lf9r"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "document"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "navigate"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "Sec-Fetch-User",
+						"value": "?1"
+					},
+					{
+						"key": "Priority",
+						"value": "u=0, i"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "csrf_test_name",
+							"value": "26225dc993be2cae4c0d984d04604ab8",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "msm518@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "?i9WR\"tq;u.@en6",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:7071/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl \"http://localhost:7071/login\" -X POST -H \"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0\" -H \"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8\" -H \"Accept-Language: en-US,en;q=0.5\" -H \"Accept-Encoding: gzip, deflate, br, zstd\" -H \"Content-Type: application/x-www-form-urlencoded\" -H \"Origin: http://localhost:7071\" -H \"Connection: keep-alive\" -H \"Referer: http://localhost:7071/login\" -H \"Cookie: debug-bar-theme=light; debug-bar-position=bottom; debug-bar-tab=ci-database; debug-bar-state=minimized; ci_session=n762tr4r1ijqr731s8pmod81sdp3lf9r\" -H \"Upgrade-Insecure-Requests: 1\" -H \"Sec-Fetch-Dest: document\" -H \"Sec-Fetch-Mode: navigate\" -H \"Sec-Fetch-Site: same-origin\" -H \"Sec-Fetch-User: ?1\" -H \"Priority: u=0, i\" --data-raw \"csrf_test_name=26225dc993be2cae4c0d984d04604ab8&email=msm518^%^40gmail.com&password=^%^3Fi9WR^%^22tq^%^3Bu.^%^40en6\""
+			},
+			"response": []
+		},
+		{
+			"name": "Department List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0"
+					},
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.5"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br, zstd"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:7071/register"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cookie",
+						"value": "debug-bar-theme=light; debug-bar-position=bottom; ci_session=23dvatgg1tfb7eoqn0qvkfc3qgolr1md; debug-bar-state=open; debug-bar-tab=ci-routes"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "document"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "navigate"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "Sec-Fetch-User",
+						"value": "?1"
+					},
+					{
+						"key": "Priority",
+						"value": "u=0, i"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:7071/api/v1/employee/departments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"departments"
+					]
+				},
+				"description": "Generated from cURL: curl \"http://localhost:7071/api/v1/employee/departments\" -H \"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0\" -H \"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8\" -H \"Accept-Language: en-US,en;q=0.5\" -H \"Accept-Encoding: gzip, deflate, br, zstd\" -H \"Referer: http://localhost:7071/register\" -H \"Connection: keep-alive\" -H \"Cookie: debug-bar-theme=light; debug-bar-position=bottom; ci_session=23dvatgg1tfb7eoqn0qvkfc3qgolr1md; debug-bar-state=open; debug-bar-tab=ci-routes\" -H \"Upgrade-Insecure-Requests: 1\" -H \"Sec-Fetch-Dest: document\" -H \"Sec-Fetch-Mode: navigate\" -H \"Sec-Fetch-Site: same-origin\" -H \"Sec-Fetch-User: ?1\" -H \"Priority: u=0, i\""
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0"
+					},
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.5"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br, zstd"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cookie",
+						"value": "debug-bar-theme=light; debug-bar-position=bottom; ci_session=23dvatgg1tfb7eoqn0qvkfc3qgolr1md; debug-bar-state=open; debug-bar-tab=ci-routes"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "document"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "navigate"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "none"
+					},
+					{
+						"key": "Sec-Fetch-User",
+						"value": "?1"
+					},
+					{
+						"key": "Priority",
+						"value": "u=0, i"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:7071/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"logout"
+					]
+				},
+				"description": "Generated from cURL: curl \"http://localhost:7071/logout\" -H \"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0\" -H \"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8\" -H \"Accept-Language: en-US,en;q=0.5\" -H \"Accept-Encoding: gzip, deflate, br, zstd\" -H \"Connection: keep-alive\" -H \"Cookie: debug-bar-theme=light; debug-bar-position=bottom; ci_session=23dvatgg1tfb7eoqn0qvkfc3qgolr1md; debug-bar-state=open; debug-bar-tab=ci-routes\" -H \"Upgrade-Insecure-Requests: 1\" -H \"Sec-Fetch-Dest: document\" -H \"Sec-Fetch-Mode: navigate\" -H \"Sec-Fetch-Site: none\" -H \"Sec-Fetch-User: ?1\" -H \"Priority: u=0, i\""
+			},
+			"response": []
+		},
+		{
+			"name": "EmployeeDeptStore",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>Title</th>\r",
+							"        <th>Type</th>\r",
+							"        <th>Code</th>\r",
+							"        <th>Message</th>\r",
+							"        <th>File</th>\r",
+							"        <th>Line</th>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>{{response.title}}</td>\r",
+							"        <td>{{response.type}}</td>\r",
+							"        <td>{{response.code}}</td>\r",
+							"        <td>{{response.message}}</td>\r",
+							"        <td>{{response.file}}</td>\r",
+							"        <td>{{response.line}}</td>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "3b63e63dd6ed64b4941ea964da2c8449c2fc450623b4fc8c6f80640f204417d2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Logistics",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "023",
+							"type": "text"
+						},
+						{
+							"key": "mnemonic",
+							"value": "LG023",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/v1/employee/departments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"departments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
