@@ -7,6 +7,9 @@ use CodeIgniter\Router\RouteCollection;
  */
 service('auth')->routes($routes, ['except' => ['login', 'register']]);
 
+$routes->get('/', function (){
+    return redirect()->to('login');
+});
 $routes->get('login', '\App\Controllers\Api\AuthController::loginView');
 $routes->post('login', '\App\Controllers\Api\AuthController::login');
 $routes->get('register', '\App\Controllers\Api\AuthController::registerView');
