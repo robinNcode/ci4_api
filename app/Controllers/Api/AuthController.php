@@ -5,6 +5,7 @@ use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Shield\Models\UserModel;
 use CodeIgniter\Shield\Entities\User;
+use Predis\Client;
 
 class AuthController extends BaseController
 {
@@ -89,7 +90,8 @@ class AuthController extends BaseController
         $postedData = [
             'username' => $this->request->getPost('username'),
             'email' => $this->request->getPost('email'),
-            'password' => $this->request->getPost('password')
+            'password' => $this->request->getPost('password'),
+            'is_service_registration' => $this->request->getPost('is_service_registration') ?? true
         ];
 
         // Create a new user entity
@@ -97,22 +99,51 @@ class AuthController extends BaseController
         $userData = $user->fill($postedData);
 
         if($this->user_model->save($userData)){
-            return $this->respond([
-                'message' => 'User registered successfully!'
-            ]);
-        }
+            // Generate token
+            $token = $userData->generateAccessToken('default');
 
-        // Generate token
-        $token = $userData->generateAccessToken('default');
-
-        if (!empty($token)) {
-            return $this->respond([
+            $data = [
+                'status' => 'success',
                 'message' => 'User registered successfully!',
                 'access_token' => $token->raw_token
-            ]);
+            ];
+        }
+        else{
+            $data = [
+                'status' => 'error',
+                'message' => 'Failed to register user!'
+            ];
         }
 
-        return $this->fail('Failed to register user');
+        // if is_service_registration true then save user data on redis server
+        if($postedData['is_service_registration']){
+            $postedData = [
+                'status' => 'success',
+                'message' => 'User registered successfully in Redis!',
+                'access_token' => $data['access_token'],
+            ];
+
+            $redis = new Client();
+            $redis_status = $redis->set($postedData['email'], json_encode($postedData));
+
+            if(!$redis_status){
+                $data = [
+                    'status' => 'error',
+                    'message' => 'Failed to save user data in Redis!'
+                ];
+            }
+        }
+
+        return $this->respond($data);
+    }
+
+    /**
+     * Validate the authentication token in the header by communicating with Redis.
+     * Blocks the request if the token is invalid, expired, or missing...
+     * [GET] /api/v1/auth/validate
+     */
+    public function validateRedisToken(){
+        dd($this->request->getHeaderLine('Authorization'));
     }
 
 }

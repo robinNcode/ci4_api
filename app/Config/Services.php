@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\AuthTokenFilter;
 use CodeIgniter\Config\BaseService;
 
 /**
@@ -19,14 +20,17 @@ use CodeIgniter\Config\BaseService;
  */
 class Services extends BaseService
 {
-    /*
-     * public static function example($getShared = true)
-     * {
-     *     if ($getShared) {
-     *         return static::getSharedInstance('example');
-     *     }
-     *
-     *     return new \CodeIgniter\Example();
-     * }
+    /**
+     * To ensure filters are always discoverable ...
+     * @param bool $getShared
+     * @return object
      */
+    public static function redisAuth(bool $getShared = true): object
+    {
+        if($getShared){
+            return static::getSharedInstance('redisAuth');
+        }
+
+        return new AuthTokenFilter();
+    }
 }

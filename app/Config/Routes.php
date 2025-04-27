@@ -5,7 +5,13 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-service('auth')->routes($routes, ['except' => ['login', 'register']]);
+service('auth')->routes($routes, ['except' => [
+    'login',
+    'register',
+    'redis-auth/validate',
+    'redis-auth/refresh',
+    'redis-auth/revoke'
+]]);
 
 $routes->get('/', function (){
     return redirect()->to('login');
@@ -37,4 +43,11 @@ $routes->group('api', ['namespace' => 'App\Controllers\Api'], function ($routes)
             $routes->post('departments/(:num)', 'EmployeeDepartmentController::delete/$1');
         });
     });
+});
+
+// Redis API validation routes
+$routes->group('redis-auth', function ($routes) {
+    $routes->get('validate', 'AuthController::validateRedisToken');
+    $routes->post('refresh', 'AuthController::refreshToken');
+    $routes->post('revoke', 'AuthController::revokeToken');
 });
